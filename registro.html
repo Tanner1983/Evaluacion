@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperClean</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/inputs.js"></script>
+    <script src="js/regionesycomunas.js"></script>
+    <link rel="stylesheet" href="Fondo.css">
+</head>
+
+<body class="fondo1">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+              <img src="assert/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+              SuperClean
+            </a>
+          </nav>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="registro.html">Ordenes</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Administracion</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Registro</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+    <div style="height: 100px; background-color: #C4DAEC;">
+        <div class="mh-100" style="width: 100px; height: 200px; background-color: rgba(0,0,255,.1);"></div>
+    </div>
+    <br>
+    <br>
+    <div class="container-fluid">
+        <div class="container">
+                <div class="row">
+                <div class="col-sm-1">
+                    
+                </div>
+                <div class="col-sm-10">
+                  <div class="container-fluid">
+                    <div class="jumbotron jumbotron-fluid">
+                      <div class="container">
+                        <h1 class="display-4">Lavado de Autos SuperClean</h1>
+                        <p class="lead">En SuperClean encontrarás todos los servicios que necesitas para que tu vehículo esté siempre como nuevo. Todos los servivio son hechos a manos, por lo que nuestro trabajo deja su auto limpio sin dañarlo.</p>
+                      </div>
+                      </div>
+                    </div>   		    
+                </div>
+                <div class="col-sm-1">
+                    
+                </div>
+            </div>		
+        </div>	
+    </div>
+    <div class="container">
+      <h2>Órdenes de Trabajo</h2><br>		
+      <form>
+        <div class="alert alert-dark" role="alert"></div>
+        <h3>Datos del usuario</h3>	<br>	
+        <div class="row">
+          <div class="form-group col-md-7">
+			      <label for="">Rut</label>
+            <div class="input-group">
+                          
+              <input id="rut" type="text" name="rut" required class="form-control mb-4 col-6" placeholder="Rut" maxlength="8" onkeypress="return valideKey(event);" onblur="validar()">
+              <span class=input-group-addon>-</span>
+              
+               <input id="txtDv" type="text" name="txtDv" required class="form-control mb-4 col-1" maxlength="1" placeholder="" onkeypress="return soloDv(event);" onblur="validar()">
+
+            </div>  
+          </div>          				
+        </div>
+        <div class="row">				
+          <div class="form-group col-md-4">
+            <label for="">Nombre</label>
+            <input type="text" name="txtNombre" id="txtNombre" class="form-control" maxlength="50" onkeypress="return soloLetras(event)" onblur="validar()">
+            <small class="form-text text-muted">Nombres</small>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="">Apellidos: </label>
+            <input type="text" name="txtApellido" id="txtApellido" class="form-control" maxlength="50" onkeypress="return soloLetras(event)" onblur="validar()">
+            <small class="form-text text-muted">Ingrese apellidos </small>
+          </div>				
+        </div>
+        <div class="row">
+          <div class="form-group col-md-4">
+            <label for="">Fecha de nacimiento</label>
+            <input type="date" name="FechaNacimiento" id="FechaNacimiento" class="form-control" min="1950-01-01" max="2002-12-31" onblur="validar()">
+            <small class="form-text text-muted">Ingrese fecha de nacimiento (DD-MM-AAAA)</small>
+          </div>
+          <div class="form-group col-md-5">
+            <label for="">Dirección</label>
+            <input type="text" name="txtDireccion" class="form-control" maxlength="100" onblur="validar()">
+            <small class="form-text text-muted">Dirección particular  </small>
+          </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+            <label for="">Region: </label>
+            <select id="regiones" name="cmbRegiones" class="form-control mb-4" selected="15"></select>
+            <small class="form-text text-muted">Ingrese su region</small>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="">Comuna: </label>
+            <select id="comunas" name="cmbComunas" class="form-control mb-4 "></select>
+            <small class="form-text text-muted">Ingrese comuna de residencia</small>
+          </div>
+        </div>        
+        
+        <div class="alert alert-dark" role="alert"></div>
+        <h3>Datos del Vehiculo</h3><br>
+        <div class="row">
+          <div class="form-group col-md-4">
+            <label for="">Tipo de vehiculo</label>
+            <select name="cmbTipoVehiculo" class="form-control mb-4 col-5">
+              <option value="1">Furgón</option>
+              <option value="2">Automóvil</option>
+              <option value="3">Camión</option>
+              <option value="4">Camioneta</option>
+              <option value="5">Moto</option>
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="">Marca</label>
+            <input type="text" name="txtMarca" class="form-control" maxlength="20" onkeypress="return soloLetras(event)" onblur="validar()">
+            <small class="form-text text-muted">Marca del vehiculo  </small>
+          </div>
+          
+          <div class="form-group col-md-4">
+            <label for="">Modelo</label>
+            <input type="text" name="txtNombre" class="form-control" maxlength="20" onkeypress="return soloLetras(event)" onblur="validar()">
+            <small class="form-text text-muted">Ingrese modelo del vehiculo</small>
+          </div>
+        </div>
+        <div class="row">				
+          <div class="form-group col-md-4">
+            <label for="">Año</label>
+            <input type="number" name="txtAno" class="form-control" min="1990" max="2021" maxlength="4" onkeypress="return valideKey(event);" onblur="validar()">
+            <small class="form-text text-muted">Año del vehiculo</small>
+          </div>	            	
+        </div>
+        <div class="row">
+          <div class="form-group col-md-4">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" name="chkLavadoExt" type="checkbox" id="inlineCheckbox1" value="option1">
+                  <label class="form-check-label" for="inlineCheckbox1">Revision Técnica al día</label>
+            </div>            
+          </div>	
+        </div>
+        <br>        
+        <div class="alert alert-dark" role="alert"></div>
+        <h3>Servicios</h3><br>
+        <div class="row">
+          <div class="form-group col-md-4">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" name="chkLavadoExt" type="checkbox" id="inlineCheckbox1" value="option1" onClick="if (this.checked) sumar(5000); else restar(5000);">
+              <label class="form-check-label" for="inlineCheckbox1">Lavado exterior - Valor $5000</label>
+            </div>
+          </div>
+          <div class="form-group col-md-4">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" name="chkLavadoMotor" type="checkbox" id="inlineCheckbox2" value="option2" onClick="if (this.checked) sumar(8000); else restar(8000);">
+                <label class="form-check-label" for="inlineCheckbox2">Lavado de motor - Valor $8000</label>
+              </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="form-group col-md-2">
+            <label for="">Total</label>
+            <input type="text" name="txtTotal" id="txtTotal" class="form-control" onblur="validar()">
+            <small class="form-text text-muted">Valor total a cobrar</small>
+          </div>          
+          <div class="form-group col-md-4">
+            <label for="">Encargado</label>
+            <select name="cmbEncargado" class="form-control mb-4">
+              <option value="1">Rodrigo Gutierrez</option>
+              <option value="2">Luis Zuñiga</option>
+                          <option value="3">José Rivera</option>
+                          <option value="3">Rodrigo Stuardo</option>							
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="">Fecha de Servicio</label>
+            <input type="date" name="FechaServicio" class="form-control" min="2020-12-21" max="2021-12-31" onblur="validar()">
+            <small class="form-text text-muted">seleccione su fecha de servicio</small>
+          </div>
+          <div class="form-group col-md-2">            
+            <label for="">Hora Servicio</label>
+            <input type="time" name="txtHora" class="form-control" onblur="validar()">
+            <small class="form-text text-muted">Hora del servicio</small>
+          
+          </div>
+          
+        </div>
+        <br>
+        <div class="row">
+            <div class="form-group col-md-4">
+              <button type="button" id="btnModal" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#miModal" onclick="validar()">
+                Generar Orden de Trabajo
+              </button>
+            </div>
+        </div>
+        <br>
+      </form>    
+      <script>
+        $("#btnModal").click(function(){
+          let nombre = $('#txtNombre').val();
+          let apellido = $('#txtApellido').val();
+          let ncompleto = nombre + " " + apellido; 
+          let total = $('#txtTotal').val();
+          
+          $("#NomCliente").html(ncompleto);
+          $("#TotalPagar").html("$" + total);
+        });
+      </script>      
+
+      <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Generación de Orden</h5>                       
+            </div>
+            <div class="container-fluid">
+              <div class="modal-body">
+                <div class="row">
+                  <div class="form-group">
+                    Su orden será procesada inmediatamente <br>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group">
+                    Sr: <h6 id="NomCliente"></h6></div> <br>
+                  </div>  
+                <div class="row">
+                  <div class="form-group">
+                    Total a Pagar: <h6 id="TotalPagar"></h6>
+                  </div>
+                </div>  
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-secondary">Aceptar Orden</button>
+            </div>
+          </div>
+        </div>
+      </div>    
+    </div> 
+  <div style="height: 100px; background-color: #C4DAEC;">
+      <div class="mh-100" style="width: 100px; height: 200px; background-color: rgba(0,0,255,.1);"></div>
+  </div>
+<div class="container-fluid">
+  <footer class="bg-light text-center text-lg-start">
+      <div class="container p-4">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Rodrigo Gutierrez</h5>
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-dark">Perfil</a>
+                </li>               
+              </ul>
+            </div>     
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-0">Luis Zuñiga</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#!" class="text-dark">Perfil</a>
+                </li>                
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-0">Rodrigo Stuardo</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#!" class="text-dark">Perfil</a>
+                </li>                
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-0">José Rivera</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#!" class="text-dark">Perfil</a>
+                </li>                
+              </ul>
+            </div>
+          </div>    
+      </div> 
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2020 Copyright:
+        <a class="text-dark" href="#">Evaluación 02 Full Stack Python</a>
+      </div>  
+    </footer>
+  </div>    
+</body>    
+</html>
